@@ -383,7 +383,7 @@ void voice_ui_test(unsigned int card, unsigned int device, unsigned int audio_in
     }
 
     pthread_create(&event_thread,
-                    (const pthread_attr_t *) NULL, event_wait_thread_loop, mixer);
+                    (const pthread_attr_t *) NULL, (void *) event_wait_thread_loop, mixer);
 
     record_lab_buffer(pcm, cap_time);
 
